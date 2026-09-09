@@ -3,14 +3,14 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://itstudentservice.com/</loc>
+    <loc>https://www.itstudentservice.com/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="th" href="https://itstudentservice.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://itstudentservice.com/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.itstudentservice.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.itstudentservice.com/"/>
     <image:image>
-      <image:loc>https://itstudentservice.com/og-image.png</image:loc>
+      <image:loc>https://www.itstudentservice.com/og-image.png</image:loc>
       <image:title>นักเรียนไอที — รับทำโปรแกรมทุกชนิด และปรึกษาซอฟต์แวร์</image:title>
     </image:image>
   </url>

@@ -1,4 +1,4 @@
-# นักเรียนไอที (IT Student Service) — https://itstudentservice.com
+# นักเรียนไอที (IT Student Service) — https://www.itstudentservice.com
 # อนุญาตให้เก็บข้อมูลทั้งหมด ทั้ง search engine และ AI / answer engine
 
 User-agent: *
@@ -65,4 +65,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://itstudentservice.com/sitemap.xml
+Sitemap: https://www.itstudentservice.com/sitemap.xml

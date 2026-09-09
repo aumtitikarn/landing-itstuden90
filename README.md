@@ -24,19 +24,33 @@ python3 -m http.server 8000
 
 แล้วเปิด http://localhost:8000
 
-## ⚠️ ก่อนขึ้นใช้งานจริง ต้องแก้โดเมน
+## โดเมนและการ deploy
 
-ตอนนี้ทุกไฟล์ตั้งโดเมนไว้ที่ `https://itstudentservice.com` ถ้าจะใช้โดเมนอื่น
-(เช่น GitHub Pages `https://aumtitikarn.github.io/landing-itstuden90`) ต้องแก้ให้ตรงกัน
-ไม่งั้น canonical URL จะชี้ผิดหน้า และ Google จะไม่จัดอันดับหน้านี้
+เว็บนี้ถูกเสิร์ฟจาก 2 ที่ โดยมี **www.itstudentservice.com เป็นตัวจริง**
+
+| URL | สถานะ | ผู้ให้บริการ |
+| --- | --- | --- |
+| `https://www.itstudentservice.com/` | **โดเมนหลัก** — canonical ชี้มาที่นี่ | Vercel (auto deploy จาก branch `main`) |
+| `https://itstudentservice.com/` | redirect 308 ไปที่ www | Vercel |
+| `https://landing-itstuden90.vercel.app/` | URL สำรองของ Vercel | Vercel |
+| `https://aumtitikarn.github.io/landing-itstuden90/` | สำเนาสำรอง | GitHub Pages (branch `main` / root) |
+
+canonical, `og:url`, `sitemap.xml`, `robots.txt` และ `llms.txt` ชี้ไปที่
+`https://www.itstudentservice.com/` ทั้งหมด สำเนาบน GitHub Pages จึงบอก Google ว่า
+ตัวจริงอยู่ที่โดเมนหลัก ไม่ถูกนับเป็น duplicate content
+
+> ถ้าไม่ได้ใช้ GitHub Pages แล้ว ปิดได้ที่ Settings → Pages → Source → None
+> เว็บบนโดเมนหลักจะไม่กระทบ เพราะคนละผู้ให้บริการกัน
+
+### ถ้าย้ายโดเมน
+
+โดเมนถูกกำหนดไว้ที่เดียวคือตัวแปร `SITE` ในสคริปต์ที่ใช้ประกอบ `index.html`
+ถ้าแก้เองในไฟล์ที่ deploy แล้ว ให้แทนที่ทุกไฟล์พร้อมกัน
 
 ```bash
-grep -rl "itstudentservice.com" index.html robots.txt sitemap.xml llms.txt \
-  | xargs sed -i '' 's|https://itstudentservice.com|https://โดเมนใหม่ของคุณ|g'
+grep -rl "www.itstudentservice.com" index.html robots.txt sitemap.xml llms.txt \
+  | xargs sed -i '' 's|https://www.itstudentservice.com|https://โดเมนใหม่ของคุณ|g'
 ```
-
-ถ้าใช้ GitHub Pages กับโดเมนของตัวเอง อย่าลืมสร้างไฟล์ `CNAME` ที่มีบรรทัดเดียวคือชื่อโดเมน
-และตั้ง DNS ให้ชี้มาที่ GitHub Pages ด้วย
 
 ## Analytics
 
