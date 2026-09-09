@@ -65,6 +65,21 @@ grep -rl "www.itstudentservice.com" index.html robots.txt sitemap.xml llms.txt \
 > ยอด pageview จะถูกนับสองรอบ ให้เลือกอย่างใดอย่างหนึ่ง: เก็บ gtag.js ไว้ในหน้าเว็บ
 > แล้วไม่ต้องตั้งแท็ก GA4 ใน GTM หรือย้ายไปตั้งใน GTM อย่างเดียวแล้วลบ gtag.js ออกจากหน้าเว็บ
 
+### Event ที่เก็บเพิ่มจาก pageview
+
+หน้าเว็บส่ง event เหล่านี้เข้า GA4 (และ dataLayer ของ GTM) เพื่อให้รู้ว่าคนสนใจจริงแค่ไหน
+ไม่ใช่แค่เข้ามาดูแล้วออก
+
+| Event | ยิงเมื่อ | พารามิเตอร์ |
+| --- | --- | --- |
+| `contact_click` | กด LINE / เบอร์โทร / อีเมล | `method` = line \| phone \| email, `location` = header \| hero \| contact \| footer |
+| `cta_click` | กดปุ่ม "ขอคำปรึกษา" หรือ "ดูผลงาน" | `cta` = consult \| view_works, `location` |
+| `portfolio_click` | กดเข้าไปดูผลงานแต่ละตัว | `item_name` = ชื่อผลงาน |
+| `faq_open` | กางคำถามใน FAQ | `question` = คำถามที่กด |
+
+**ต้องตั้งใน GA4 เองอีกขั้น** ไปที่ Admin → Key events → Mark `contact_click` เป็น key event
+เพื่อให้นับเป็น Conversion แล้วรายงานจะบอกได้ว่าคนที่มาจากช่องทางไหนติดต่อกลับมามากที่สุด
+
 ### ตัวนับผู้เข้าชมที่แสดงบนหน้าเว็บ
 
 ฟุตเตอร์แสดง "เปิดดูแล้ว _N_ ครั้ง" โดยดึงตัวเลขจาก [hits.sh](https://hits.sh)

@@ -1509,5 +1509,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
+<script>
+/* ---- ส่ง event ที่มีความหมายทางธุรกิจเข้า GA4 / GTM ---- */
+(function(){
+  function track(name, params){
+    params = params || {};
+    if (typeof window.gtag === 'function') { window.gtag('event', name, params); }
+    else { window.dataLayer = window.dataLayer || [];
+           window.dataLayer.push(Object.assign({event:name}, params)); }
+  }
+  function where(el){
+    if (el.closest('footer')) return 'footer';
+    if (el.closest('header')) return 'header';
+    if (el.closest('#contact')) return 'contact';
+    if (el.closest('.hero')) return 'hero';
+    return 'page';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+
+    if (href.indexOf('line.me') > -1)
+      return track('contact_click', {method:'line', location:where(a)});
+    if (href.indexOf('tel:') === 0)
+      return track('contact_click', {method:'phone', location:where(a)});
+    if (href.indexOf('mailto:') === 0)
+      return track('contact_click', {method:'email', location:where(a)});
+
+    if (a.classList.contains('work')) {
+      var h = a.querySelector('h3');
+      return track('portfolio_click',
+                   {item_name: h ? h.childNodes[0].textContent.trim() : 'unknown'});
+    }
+    if (href === '#contact')
+      return track('cta_click', {cta:'consult', location:where(a)});
+    if (href === '#works')
+      return track('cta_click', {cta:'view_works', location:where(a)});
+  }, {passive:true});
+
+  /* เปิดอ่านคำถามใน FAQ = สนใจเงื่อนไข */
+  document.querySelectorAll('.faq details').forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      var s = d.querySelector('summary');
+      track('faq_open', {question: s ? s.textContent.trim() : ''});
+    });
+  });
+})();
+</script>
 </body>
 </html>
