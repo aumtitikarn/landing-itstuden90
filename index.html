@@ -627,6 +627,8 @@ img,svg{max-width:100%}
 
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
 .mono{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+/* กันไม่ให้เบราว์เซอร์ตัดคำไทยกลางวลี */
+.nb{white-space:nowrap}
 
 /* section scaffolding */
 section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--rule)}
@@ -738,7 +740,14 @@ header{
 .svc-item:hover{background:var(--paper-2)}
 .svc-item:hover .svc-no{color:var(--gold-deep)}
 .svc-no{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;color:var(--ink-faint);transition:color .2s}
-.svc-item h3{font-size:1.16rem;margin-top:7px}
+.svc-top{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.svc-ico{
+  width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;
+  background:var(--gold-wash);color:var(--gold-deep);border:1px solid var(--rule);
+  transition:background .2s,color .2s,transform .2s cubic-bezier(.2,.8,.3,1),border-color .2s;
+}
+.svc-item:hover .svc-ico{background:var(--gold);color:#14110C;border-color:var(--gold);transform:translateY(-2px)}
+.svc-item h3{font-size:1.16rem;margin-top:0;text-wrap:pretty}
 .svc-item p{margin-top:8px;color:var(--ink-soft);font-size:.95rem;max-width:38ch}
 .svc-item .chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-family:var(--f-mono);font-size:.65rem;letter-spacing:.06em;padding:3px 9px;border-radius:5px;background:var(--pen-wash);color:var(--pen);white-space:nowrap}
@@ -987,46 +996,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="sec-head rise">
       <span class="eyebrow">บริการของเรา</span>
-      <h2>เปลี่ยนโจทย์ของคุณให้เป็นระบบที่ใช้งานได้จริง</h2>
-      <p>ไม่ว่าจะเป็นงานหน้าร้าน งานเอกสารในสำนักงาน โครงงานจบการศึกษา หรือระบบภายในองค์กร เราออกแบบให้สอดคล้องกับกระบวนการทำงานจริงของคุณ</p>
+      <h2>หลายอย่างที่<span class="nb">ทำอยู่ทุกวัน</span> <span class="nb">ทำให้ง่ายกว่านี้ได้</span></h2>
+      <p>บางเรื่องไม่ถึงกับเป็นปัญหา แต่ถ้ามีระบบช่วย จะประหยัดเวลาและลดงานซ้ำได้อีกมาก</p>
     </div>
 
     <div class="svc rise">
       <article class="svc-item">
-        <div class="svc-no">SVC / 01</div>
-        <h3>เว็บแอปพลิเคชัน</h3>
-        <p>ระบบจอง ระบบขาย ระบบสมาชิก และเว็บไซต์บริษัท รองรับการใช้งานทั้งบนโทรศัพท์มือถือและคอมพิวเตอร์</p>
-        <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.2" y="5" width="17.6" height="15.6" rx="2.4"/>
+              <path d="M3.2 9.6h17.6M8 3.2v3.6M16 3.2v3.6"/>
+              <path d="M7.4 13.2h4.2M7.4 16.8h7.4"/>
+              <circle cx="17" cy="13.2" r="1.5"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 01</span>
+        </div>
+        <h3>รับจองทางแชท แล้วจองชนกันบ่อย</h3>
+        <p>ลูกค้าทักมาหลายช่องทาง ต้องไล่อ่านย้อนทีละข้อความ พอมีคนจองพร้อมกันก็ชนกัน เราทำระบบที่ลูกค้ากดจองเองได้ตลอด 24 ชั่วโมง และหน้าร้านเห็นคิวตรงกันทั้งร้าน</p>
+        <div class="chips"><span class="chip">ระบบจองออนไลน์</span><span class="chip">เว็บแอปพลิเคชัน</span><span class="chip">ปฏิทินคิว</span></div>
       </article>
+
       <article class="svc-item">
-        <div class="svc-no">SVC / 02</div>
-        <h3>ระบบบน LINE</h3>
-        <p>LINE OA, LIFF, Flex Message, บัตรคิวดิจิทัล และระบบแจ้งเตือนอัตโนมัติถึงลูกค้าโดยตรง</p>
-        <div class="chips"><span class="chip">LINE Login</span><span class="chip">Messaging API</span><span class="chip">LIFF</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.6" y="5.2" width="18.8" height="13.6" rx="2.4"/>
+              <path d="M2.6 9.4h18.8"/>
+              <path d="M12 11.4l1.36 2.76 3.04.44-2.2 2.14.52 3.03L12 17.48l-2.72 1.43.52-3.03-2.2-2.14 3.04-.44z"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 02</span>
+        </div>
+        <h3>ลูกค้าเก่าหายไปเงียบ ๆ โดยไม่รู้ตัว</h3>
+        <p>ร้านส่วนใหญ่ไม่มีเครื่องมือดึงลูกค้าเก่ากลับมา เราทำระบบสมาชิกและสะสมแต้มบน LINE ที่ลูกค้าไม่ต้องโหลดแอปเพิ่ม ส่งโปรโมชันถึงมือได้ทันที</p>
+        <div class="chips"><span class="chip">LINE OA</span><span class="chip">LIFF</span><span class="chip">ระบบสมาชิก</span><span class="chip">สะสมแต้ม</span></div>
       </article>
+
       <article class="svc-item">
-        <div class="svc-no">SVC / 03</div>
-        <h3>ระบบหลังบ้าน &amp; แดชบอร์ด</h3>
-        <p>จัดการข้อมูล กำหนดสิทธิ์ผู้ใช้ รายงานยอดขาย และสรุปตัวเลขในรูปแบบที่เข้าใจได้ทันที</p>
-        <div class="chips"><span class="chip">Dashboard</span><span class="chip">Report</span><span class="chip">Role</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.6 20.4h16.8"/>
+              <path d="M7.6 20.4V13.4M12 20.4V7.8M16.4 20.4V16.2" stroke-width="2.2"/>
+              <path d="M6 10.6l3.6-3.2 3.4 2.1 4.6-4.6"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 03</span>
+        </div>
+        <h3>ปิดยอดสิ้นเดือนทีใช้เวลาทั้งวัน</h3>
+        <p>ข้อมูลกระจายอยู่ในสมุด Excel และแชท กว่าจะรวมเสร็จก็ตัดสินใจช้าไปแล้ว เราทำระบบหลังบ้านและแดชบอร์ดที่สรุปยอดขาย ต้นทุน และช่วงเวลาขายดีให้อัตโนมัติ</p>
+        <div class="chips"><span class="chip">ระบบหลังบ้าน</span><span class="chip">แดชบอร์ด</span><span class="chip">รายงานยอดขาย</span></div>
       </article>
+
       <article class="svc-item">
-        <div class="svc-no">SVC / 04</div>
-        <h3>เชื่อมต่อ API &amp; ระบบเดิม</h3>
-        <p>เชื่อมต่อระบบชำระเงิน Google Sheet ระบบบัญชี หรือระบบที่ใช้งานอยู่เดิม โดยไม่ต้องรื้อระบบทั้งหมด</p>
-        <div class="chips"><span class="chip">REST</span><span class="chip">Webhook</span><span class="chip">Integration</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.8" y="3.4" width="7.4" height="6.2" rx="1.6"/>
+              <rect x="13.8" y="14.4" width="7.4" height="6.2" rx="1.6"/>
+              <path d="M10.2 6.5h4.3a3 3 0 0 1 3 3v4.9"/>
+              <path d="M15.5 12.9l2 2 2-2"/>
+              <path d="M13.8 17.5H9.5a3 3 0 0 1-3-3V9.6"/>
+              <path d="M8.5 11.1l-2-2-2 2"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 04</span>
+        </div>
+        <h3>งานเดิม ๆ ที่ต้องพิมพ์ซ้ำทุกวัน</h3>
+        <p>คัดลอกข้อมูลจากแชทไปลง Excel แล้วพิมพ์ใบเสร็จอีกรอบ หมดไปวันละหลายชั่วโมง เราเชื่อมระบบที่คุณใช้อยู่เข้าด้วยกัน ให้ข้อมูลไหลเองโดยไม่ต้องพิมพ์ซ้ำ</p>
+        <div class="chips"><span class="chip">เชื่อมต่อ API</span><span class="chip">Google Sheet</span><span class="chip">ระบบชำระเงิน</span></div>
       </article>
+
       <article class="svc-item">
-        <div class="svc-no">SVC / 05</div>
-        <h3>ที่ปรึกษา Software Solution</h3>
-        <p>หากยังไม่แน่ใจว่าควรเริ่มจากส่วนใด เราช่วยวิเคราะห์โจทย์ กำหนดขอบเขตงาน ประเมินงบประมาณ และจัดลำดับความสำคัญให้</p>
-        <div class="chips"><span class="chip">Requirement</span><span class="chip">Scope</span><span class="chip">Roadmap</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.8"/>
+              <path d="M15.6 8.4l-2.2 4.9-4.9 2.2 2.2-4.9z"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 05</span>
+        </div>
+        <h3>อยากมีระบบ แต่ไม่รู้ควรเริ่มตรงไหน</h3>
+        <p>กลัวจ่ายแพงเกินจำเป็น หรือทำมาแล้วไม่ได้ใช้จริง เราช่วยแยกว่าอะไรควรทำก่อน อะไรรอได้ พร้อมประเมินงบและผลลัพธ์ที่จะได้ ก่อนเริ่มลงทุน</p>
+        <div class="chips"><span class="chip">ที่ปรึกษา Software Solution</span><span class="chip">วางขอบเขตงาน</span></div>
       </article>
+
       <article class="svc-item">
-        <div class="svc-no">SVC / 06</div>
-        <h3>ดูแลหลังส่งมอบ</h3>
-        <p>อบรมการใช้งาน จัดทำคู่มือ ดูแลเซิร์ฟเวอร์ แก้ไขข้อผิดพลาด และพัฒนาฟีเจอร์เพิ่มเติมเมื่อธุรกิจขยายตัว</p>
-        <div class="chips"><span class="chip">Support</span><span class="chip">Hosting</span><span class="chip">Training</span></div>
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.9l7.4 2.7v5.6c0 4.4-3.06 8.02-7.4 10.1-4.34-2.08-7.4-5.7-7.4-10.1V5.6z"/>
+              <path d="M8.9 11.9l2.3 2.3 4.1-4.5"/>
+            </svg>
+          </span>
+          <span class="svc-no">SVC / 06</span>
+        </div>
+        <h3>ระบบเดิมพัง แล้วไม่มีใครแก้ให้</h3>
+        <p>หลายคนเคยจ้างทำระบบแล้วติดต่อผู้พัฒนาไม่ได้ เราส่งมอบซอร์สโค้ดและสิทธิ์เจ้าของให้ครบ พร้อมดูแลต่อเนื่องและพัฒนาเพิ่มเมื่อธุรกิจขยายตัว</p>
+        <div class="chips"><span class="chip">ดูแลหลังส่งมอบ</span><span class="chip">อบรมใช้งาน</span><span class="chip">พัฒนาต่อยอด</span></div>
       </article>
     </div>
   </div>
