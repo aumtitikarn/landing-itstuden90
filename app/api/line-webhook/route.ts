@@ -1,4 +1,5 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
+import { setupMessage } from '@/lib/line-setup';
 
 /**
  * Webhook ของ LINE OA — ใช้หา groupId ของกลุ่มที่จะให้บอทส่งคำขอใบเสนอราคาเข้าไป
@@ -84,12 +85,7 @@ export async function POST(request: Request) {
       TRIGGERS.includes(String(event.message.text).trim().toLowerCase());
 
     if (event.type === 'join' || askedForId) {
-      await reply(
-        token,
-        event.replyToken,
-        `ค่า ${target.kind} ของแชทนี้คือ\n${target.id}\n\n` +
-          'นำไปตั้งเป็น LINE_GROUP_ID บนโฮสต์ แล้วคำขอใบเสนอราคาจากเว็บไซต์จะถูกส่งเข้ามาที่นี่'
-      );
+      await reply(token, event.replyToken, setupMessage(target));
     }
   }
 
