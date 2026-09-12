@@ -374,7 +374,9 @@ footer{background:var(--panel);color:var(--panel-soft);border-top:1px solid var(
 .dock{
   position:fixed;z-index:80;
   right:clamp(12px,2.2vw,26px);bottom:clamp(12px,2.2vw,26px);
-  display:flex;flex-direction:column;align-items:flex-end;gap:11px;
+  /* column-reverse ดันปุ่มเปิด/ปิดไปอยู่ล่างสุด รายการจึงกางขึ้นด้านบน
+     โดยลำดับใน DOM ยังเป็นปุ่มก่อนรายการ คีย์บอร์ดจึงโฟกัสปุ่มที่คุมมันก่อน */
+  display:flex;flex-direction:column-reverse;align-items:flex-end;gap:11px;
 }
 .dock-list{
   list-style:none;margin:0;padding:0;
