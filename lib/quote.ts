@@ -6,6 +6,7 @@ const LIMITS = {
   company: 160,
   phone: 40,
   email: 160,
+  lineId: 80,
   details: 4000,
   language: 8,
   page: 300,
@@ -39,6 +40,7 @@ export type QuoteData = {
   company: string;
   phone: string;
   email: string;
+  lineId: string;
   details: string;
   language: string;
   page: string;
@@ -55,6 +57,7 @@ export function parseQuote(body: Record<string, unknown>): {
     company: clean(body.company, LIMITS.company),
     phone: clean(body.phone, LIMITS.phone),
     email: clean(body.email, LIMITS.email),
+    lineId: clean(body.lineId, LIMITS.lineId),
     details: cleanMultiline(body.details, LIMITS.details),
     language: clean(body.language, LIMITS.language),
     page: clean(body.page, LIMITS.page),

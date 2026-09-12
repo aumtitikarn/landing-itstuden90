@@ -442,6 +442,8 @@
     "phonePlaceholder": "e.g. 081 234 5678",
     "emailLabel": "Email",
     "emailPlaceholder": "e.g. you@company.com",
+    "lineIdLabel": "LINE ID",
+    "lineIdPlaceholder": "e.g. @yourshop or somchai123",
     "detailsLabel": "Details",
     "detailsPlaceholder": "What should the system do, roughly how many users, any deadline or budget in mind?",
     "submit": "Send request",
@@ -463,6 +465,7 @@
     "fieldCompany": "Company / shop",
     "fieldPhone": "Phone",
     "fieldEmail": "Email",
+    "fieldLineId": "LINE ID",
     "fieldDetails": "Details",
     "fieldPage": "Sent from"
   },

@@ -62,7 +62,7 @@ function label(text: string): string {
   return text.length > 20 ? text.slice(0, 19) + '…' : text;
 }
 
-/** ปุ่มล่าง — LINE ยอมรับ uri เฉพาะ http, https, line และ tel */
+/** ปุ่มล่าง — ปุ่มโทรกลับเท่านั้น (LINE ยอมรับ uri เฉพาะ http, https, line, tel) */
 function footerButtons(data: QuoteData): Component[] {
   const buttons: Component[] = [];
   const digits = data.phone.replace(/[^\d+]/g, '');
@@ -74,14 +74,6 @@ function footerButtons(data: QuoteData): Component[] {
       color: COLOR.ink,
       height: 'sm',
       action: { type: 'uri', label: label('โทรกลับลูกค้า'), uri: `tel:${digits}` },
-    });
-  }
-  if (/^https?:\/\//.test(data.page)) {
-    buttons.push({
-      type: 'button',
-      style: 'link',
-      height: 'sm',
-      action: { type: 'uri', label: label('เปิดหน้าที่ส่งมา'), uri: data.page },
     });
   }
   return buttons;
@@ -133,6 +125,7 @@ function bubble(data: QuoteData): Component {
         row('บริษัท/ร้าน', data.company),
         row('โทร', data.phone),
         row('อีเมล', data.email),
+        ...(data.lineId ? [row('ไอดีไลน์', data.lineId)] : []),
         separator(),
         {
           type: 'box',

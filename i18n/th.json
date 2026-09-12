@@ -442,6 +442,8 @@
     "phonePlaceholder": "เช่น 081 234 5678",
     "emailLabel": "อีเมล",
     "emailPlaceholder": "เช่น you@company.com",
+    "lineIdLabel": "ไอดีไลน์",
+    "lineIdPlaceholder": "เช่น @yourshop หรือ somchai123",
     "detailsLabel": "รายละเอียด",
     "detailsPlaceholder": "อยากให้ระบบทำอะไรได้ มีผู้ใช้ประมาณเท่าไร มีกำหนดส่งหรืองบประมาณในใจไหม",
     "submit": "ส่งคำขอใบเสนอราคา",
@@ -463,6 +465,7 @@
     "fieldCompany": "บริษัท / ร้านค้า",
     "fieldPhone": "เบอร์โทรศัพท์",
     "fieldEmail": "อีเมล",
+    "fieldLineId": "ไอดีไลน์",
     "fieldDetails": "รายละเอียด",
     "fieldPage": "ส่งจากหน้า"
   },

@@ -12,6 +12,7 @@ type Fields = {
   company: string;
   phone: string;
   email: string;
+  lineId: string;
   details: string;
   _gotcha: string;
 };
@@ -22,6 +23,7 @@ const EMPTY: Fields = {
   company: '',
   phone: '',
   email: '',
+  lineId: '',
   details: '',
   _gotcha: '',
 };
@@ -99,6 +101,7 @@ export function QuoteDialog({
       `${t.fieldCompany}: ${data.company || '-'}`,
       `${t.fieldPhone}: ${data.phone || '-'}`,
       `${t.fieldEmail}: ${data.email || '-'}`,
+      `${t.fieldLineId}: ${data.lineId || '-'}`,
       '',
       `${t.fieldDetails}:`,
       data.details || '-',
@@ -333,6 +336,22 @@ export function QuoteDialog({
                     {errors.email}
                   </span>
                 )}
+              </label>
+            </div>
+
+            <div className="qf-row">
+              <label className="qf" htmlFor="qf-lineId">
+                <span className="qf-label">
+                  {t.lineIdLabel} <i>({t.optional})</i>
+                </span>
+                <input
+                  {...field('lineId')}
+                  name="lineId"
+                  type="text"
+                  autoComplete="off"
+                  placeholder={t.lineIdPlaceholder}
+                  onChange={(e) => set('lineId', e.target.value)}
+                />
               </label>
             </div>
 
