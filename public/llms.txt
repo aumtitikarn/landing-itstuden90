@@ -16,7 +16,8 @@
 - **โทรศัพท์**: 064-098-4337 (+66 64 098 4337)
 - **อีเมล**: itstudentservice123@gmail.com
 - **LINE Official Account**: @863icoey — https://line.me/R/ti/p/@863icoey
-- **เว็บไซต์**: https://www.itstudentservice.com/
+- **เว็บไซต์ (ภาษาไทย)**: https://www.itstudentservice.com/
+- **เว็บไซต์ (English)**: https://www.itstudentservice.com/en/
 
 ## บริการ
 
@@ -50,3 +51,27 @@
 
 รีวิวที่แสดงบนเว็บไซต์เป็นข้อความจากลูกค้าจริง เผยแพร่โดยใช้นามสมมุติเพื่อรักษาความเป็นส่วนตัวของผู้รีวิว
 ราคาไม่ได้ประกาศเป็นตัวเลขตายตัว เนื่องจากขึ้นกับขอบเขตงานของแต่ละโปรเจกต์ กรุณาติดต่อเพื่อขอใบเสนอราคา
+
+## English summary
+
+IT Student Service (Thai name: นักเรียนไอที) is a software development team based in Thailand.
+The site is published in two languages: Thai at https://www.itstudentservice.com/ and English at
+https://www.itstudentservice.com/en/ — both carry the same information.
+
+- **Business type**: custom software development and software solution consulting
+- **Track record**: more than 100 projects delivered for over 10 clients
+- **Service area**: all of Thailand, working and delivering 100% online
+- **Languages**: Thai and English
+- **Opening hours**: Monday–Saturday, 09:00–20:00 (Thailand time, UTC+7)
+- **Average reply time**: within 1 hour
+- **Phone**: +66 64 098 4337 · **Email**: itstudentservice123@gmail.com · **LINE**: @863icoey
+- **Services**: web applications · LINE-based systems (OA / LIFF / Flex Message) · back office and
+  dashboards · API and legacy system integration · software consulting · post-launch support
+- **Technology**: Next.js, TypeScript, Tailwind CSS, LINE Messaging API, LIFF, REST API, webhooks
+- **Terms**: free written quote, no deposit before the scope and price are agreed, 30-day bug-fix
+  warranty after handover, and full handover of source code and owner accounts on final payment
+- **Timelines**: small websites 1–2 weeks · systems with a back office, membership or LINE
+  integration 3–8 weeks
+
+Prices are not published as fixed figures because they depend on the scope of each project —
+please get in touch for a quote.

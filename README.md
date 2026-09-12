@@ -2,148 +2,129 @@
 
 Landing page ของ **นักเรียนไอที (IT Student Service)** — ร้านรับทำโปรแกรม/ซอฟต์แวร์ทุกชนิด และรับปรึกษา Software Solution
 
+สองภาษา ไทย/อังกฤษ บน Next.js (App Router) พร้อมฟอร์มขอใบเสนอราคาที่ส่งเข้ากลุ่ม LINE ผ่าน LINE OA
+
 ## โครงสร้าง
 
-ไฟล์เดียวจบ ไม่ต้อง build ไม่ต้องติดตั้งอะไรเพิ่ม
-
 ```
-index.html      # ทั้งเว็บอยู่ในไฟล์นี้ (HTML + CSS + JS + JSON-LD)
-og-image.png    # รูปตอนแชร์ลิงก์ 1200x630
-robots.txt      # เปิดให้ search engine และ AI crawler เก็บข้อมูล
-sitemap.xml     # แผนผังเว็บไซต์
-llms.txt        # สรุปข้อมูลร้านสำหรับ AI / answer engine
+app/
+  globals.css              CSS ทั้งหมดของเว็บ (โทนกระดาษ/ทอง + dark mode)
+  (th)/                    ภาษาไทย -> /
+    layout.tsx             root layout, <html lang="th">, metadata ไทย
+    page.tsx
+  (en)/                    ภาษาอังกฤษ -> /en/
+    layout.tsx             root layout, <html lang="en">, metadata อังกฤษ
+    en/page.tsx
+  api/
+    quote/route.ts         รับฟอร์มขอใบเสนอราคา -> push เข้ากลุ่ม LINE
+    line-webhook/route.ts  webhook ของ LINE OA ใช้หา groupId
+  sitemap.ts               sitemap.xml (มี hreflang ครบทุกภาษา)
+  robots.ts                robots.txt (เปิดให้ search engine + AI crawler)
+
+i18n/
+  th.json  en.json         ข้อความทั้งหมดของเว็บ แยกตามภาษา
+
+lib/
+  i18n.ts                  รายการภาษา, getDictionary, path ของแต่ละภาษา
+  site.ts                  ข้อมูลที่ไม่ขึ้นกับภาษา (ช่องทางติดต่อ, URL ผลงาน)
+  metadata.ts              สร้าง metadata + canonical + hreflang ต่อภาษา
+  schema.ts                สร้าง JSON-LD ต่อภาษา
+  quote.ts                 ตรวจและทำความสะอาดข้อมูลจากฟอร์ม
+  line-message.ts          Flex Message ที่ส่งเข้ากลุ่ม LINE
+  track.ts                 ส่ง event เข้า GA4 / GTM
+
+components/                ชิ้นส่วนของหน้า (ส่วนใหญ่เป็น Server Component)
+public/
+  og-image.png             รูปตอนแชร์ลิงก์ 1200x630
+  llms.txt                 สรุปข้อมูลร้านสำหรับ AI / answer engine
 ```
 
-ฟอนต์โหลดจาก Google Fonts (Bai Jamjuree, IBM Plex Sans Thai Looped, IBM Plex Mono) นอกนั้นไม่มี dependency
-
-## เปิดดูในเครื่อง
+## เริ่มงาน
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-แล้วเปิด http://localhost:8000
+เปิด http://localhost:3000 (ไทย) และ http://localhost:3000/en/ (อังกฤษ)
 
-## โดเมนและการ deploy
-
-เว็บนี้ถูกเสิร์ฟจาก 2 ที่ โดยมี **www.itstudentservice.com เป็นตัวจริง**
-
-| URL | สถานะ | ผู้ให้บริการ |
-| --- | --- | --- |
-| `https://www.itstudentservice.com/` | **โดเมนหลัก** — canonical ชี้มาที่นี่ | Vercel (auto deploy จาก branch `main`) |
-| `https://itstudentservice.com/` | redirect 308 ไปที่ www | Vercel |
-| `https://landing-itstuden90.vercel.app/` | URL สำรองของ Vercel | Vercel |
-| `https://aumtitikarn.github.io/landing-itstuden90/` | สำเนาสำรอง | GitHub Pages (branch `main` / root) |
-
-canonical, `og:url`, `sitemap.xml`, `robots.txt` และ `llms.txt` ชี้ไปที่
-`https://www.itstudentservice.com/` ทั้งหมด สำเนาบน GitHub Pages จึงบอก Google ว่า
-ตัวจริงอยู่ที่โดเมนหลัก ไม่ถูกนับเป็น duplicate content
-
-> ถ้าไม่ได้ใช้ GitHub Pages แล้ว ปิดได้ที่ Settings → Pages → Source → None
-> เว็บบนโดเมนหลักจะไม่กระทบ เพราะคนละผู้ให้บริการกัน
-
-### ถ้าย้ายโดเมน
-
-โดเมนถูกกำหนดไว้ที่เดียวคือตัวแปร `SITE` ในสคริปต์ที่ใช้ประกอบ `index.html`
-ถ้าแก้เองในไฟล์ที่ deploy แล้ว ให้แทนที่ทุกไฟล์พร้อมกัน
+คำสั่งอื่น
 
 ```bash
-grep -rl "www.itstudentservice.com" index.html robots.txt sitemap.xml llms.txt \
-  | xargs sed -i '' 's|https://www.itstudentservice.com|https://โดเมนใหม่ของคุณ|g'
+npm run build      # build production
+npm run typecheck  # ตรวจ type ทั้งโปรเจกต์
 ```
 
-## Analytics
+## การแก้ข้อความ
 
-ติดตั้งไว้แล้วในหัวของทุกหน้า
+ข้อความทุกคำอยู่ใน `i18n/th.json` และ `i18n/en.json` ไม่ต้องแก้ในโค้ด
 
-| เครื่องมือ | ID |
-| --- | --- |
-| Google Tag Manager | `GTM-PTZVHBFN` |
-| Google Analytics 4 (gtag.js) | `G-C1XG6FBPQE` |
+`th.json` เป็นต้นแบบของโครงสร้าง ถ้า `en.json` มีคีย์ไม่ครบหรือเกิน `npm run typecheck` จะฟ้องทันที
+จึงไม่มีทางที่ภาษาใดภาษาหนึ่งจะตกหล่นโดยไม่รู้ตัว
 
-> **ระวังนับซ้ำ** — ถ้าใน GTM มีการตั้งแท็ก GA4 ที่ใช้ Measurement ID `G-C1XG6FBPQE` ซ้ำอีก
-> ยอด pageview จะถูกนับสองรอบ ให้เลือกอย่างใดอย่างหนึ่ง: เก็บ gtag.js ไว้ในหน้าเว็บ
-> แล้วไม่ต้องตั้งแท็ก GA4 ใน GTM หรือย้ายไปตั้งใน GTM อย่างเดียวแล้วลบ gtag.js ออกจากหน้าเว็บ
+คีย์ที่เป็น HTML ได้ (ใส่ `<b>` `<span class="hl">` ได้) มีแค่ `hero.h1`, `hero.lead`,
+`services.h2`, `about.lead` และ `about.specs[].dd` — ที่เหลือเป็นข้อความล้วน
 
-### Event ที่เก็บเพิ่มจาก pageview
+## ฟอร์มขอใบเสนอราคา -> กลุ่ม LINE
 
-หน้าเว็บส่ง event เหล่านี้เข้า GA4 (และ dataLayer ของ GTM) เพื่อให้รู้ว่าคนสนใจจริงแค่ไหน
-ไม่ใช่แค่เข้ามาดูแล้วออก
+ลูกค้ากรอกฟอร์มจากปุ่มลอยมุมขวาล่าง แล้ว LINE OA จะส่ง Flex Message เข้ากลุ่มที่กำหนด
 
-| Event | ยิงเมื่อ | พารามิเตอร์ |
-| --- | --- | --- |
-| `contact_click` | กด LINE / เบอร์โทร / อีเมล | `method` = line \| phone \| email, `location` = header \| hero \| contact \| footer |
-| `cta_click` | กดปุ่ม "ขอคำปรึกษา" หรือ "ดูผลงาน" | `cta` = consult \| view_works, `location` |
-| `portfolio_click` | กดเข้าไปดูผลงานแต่ละตัว | `item_name` = ชื่อผลงาน |
-| `faq_open` | กางคำถามใน FAQ | `question` = คำถามที่กด |
+### ตั้งค่า
 
-**ต้องตั้งใน GA4 เองอีกขั้น** ไปที่ Admin → Key events → Mark `contact_click` เป็น key event
-เพื่อให้นับเป็น Conversion แล้วรายงานจะบอกได้ว่าคนที่มาจากช่องทางไหนติดต่อกลับมามากที่สุด
+1. สร้าง Messaging API channel ที่ [LINE Developers Console](https://developers.line.biz/console/)
+2. คัดลอกค่าจาก channel ไปใส่เป็น environment variable (ดูรายการใน `.env.example`)
 
-### ตัวนับผู้เข้าชมที่แสดงบนหน้าเว็บ
+   | ตัวแปร | หาจากที่ไหน |
+   | --- | --- |
+   | `LINE_CHANNEL_SECRET` | Basic settings -> Channel secret |
+   | `LINE_CHANNEL_ACCESS_TOKEN` | Messaging API -> Channel access token (long-lived) |
+   | `LINE_GROUP_ID` | ได้จากขั้นตอนที่ 4 |
 
-ฟุตเตอร์แสดง "เปิดดูแล้ว _N_ ครั้ง" โดยดึงตัวเลขจาก [hits.sh](https://hits.sh)
-ไม่ต้องสมัครสมาชิกและไม่ต้องมีเซิร์ฟเวอร์ ตัวนับผูกกับคีย์ `itstudentservice.com`
+   ในเครื่องให้ใส่ไว้ที่ `.env.local` (ถูก gitignore แล้ว) บน Vercel ใส่ที่ Settings -> Environment Variables
 
-- badge ถูกตั้งค่าให้แสดง **เฉพาะตัวเลข** (`label=%20`) ส่วนคำว่า "เปิดดูแล้ว / ครั้ง"
-  เขียนเป็น HTML ด้วยฟอนต์ของเว็บเอง เพราะถ้าใส่ label ภาษาไทยเข้าไป hits.sh จะเรนเดอร์ตัวอักษรฉีกออกจากกัน
-- ถ้าเปลี่ยนโดเมน ให้แก้คีย์ในลิงก์รูปให้ตรงกับโดเมนใหม่ด้วย ไม่งั้นตัวนับจะยังนับของโดเมนเดิม
+3. ตั้ง **Webhook URL** เป็น `https://<โดเมน>/api/line-webhook/` แล้วเปิด *Use webhook*
+   และปิด *Auto-reply messages* กับ *Greeting messages* ที่ LINE Official Account Manager
+4. เชิญ LINE OA เข้ากลุ่มที่ต้องการ — บอทจะทักบอก `groupId` ให้ทันทีที่เข้ากลุ่ม
+   (หรือพิมพ์ `groupid` ในกลุ่มเมื่อไรก็ได้) แล้วนำค่านั้นไปใส่ `LINE_GROUP_ID` และ deploy อีกครั้ง
 
-> **ตัวเลขนี้คือจำนวน "ครั้งที่หน้าถูกเปิด" ไม่ใช่จำนวนคนไม่ซ้ำ** — รวมการรีเฟรชและบอทที่เข้ามาเก็บข้อมูลด้วย
-> ถ้าอยากรู้จำนวนผู้ใช้จริงแบบไม่ซ้ำ ให้ดูที่รายงาน GA4 ซึ่งติดตั้งไว้แล้ว และแม่นกว่ามาก
+### พฤติกรรมเมื่อส่งไม่สำเร็จ
 
-## SEO / AEO / GEO
+ถ้า push เข้ากลุ่มไม่ได้ (token หมดอายุ, ยังไม่ตั้งค่า, LINE ล่ม) ฟอร์มจะเปิดแอปอีเมลของลูกค้า
+พร้อมข้อมูลที่กรอกไว้ครบ เพื่อไม่ให้คำขอหลุดมือ
 
-### SEO — ให้ Google จัดอันดับได้
+### ความปลอดภัย
 
-- `<title>` และ meta description เขียนตามคำค้นจริง (รับทำเว็บไซต์ / รับทำโปรแกรม / ที่ปรึกษาซอฟต์แวร์)
-- canonical URL, `hreflang` (th + x-default), `robots` แบบ `max-snippet:-1` และ `max-image-preview:large`
-- Open Graph + Twitter Card พร้อม `og-image.png` ขนาด 1200x630
-- โครงสร้างหัวข้อ `h1` เดียว ตามด้วย `h2` รายเซกชัน, HTML เชิงความหมาย (`section`, `article`, `dl`)
-- `sitemap.xml` และ `robots.txt` พร้อมส่งเข้า Google Search Console
+- channel access token อ่านจาก environment variable ฝั่งเซิร์ฟเวอร์เท่านั้น ไม่เคยไปถึงเบราว์เซอร์
+- webhook ตรวจ `x-line-signature` ด้วย HMAC-SHA256 ก่อนทำงานทุกครั้ง
+- ฟอร์มมี honeypot กันบอท และ endpoint ปฏิเสธ request ที่มาจาก origin อื่น
+- ข้อมูลที่รับเข้ามาถูกตัดอักขระควบคุมและจำกัดความยาว ก่อนประกอบเป็นข้อความ
 
-### AEO — ให้ตอบใน Featured Snippet และ AI Overviews
+### แก้หน้าตาการ์ด
 
-- **JSON-LD `FAQPage`** — คำถาม 5 ข้อพร้อมคำตอบเต็ม มีสิทธิ์ขึ้น rich result
-- **`ProfessionalService`** — ชื่อร้าน เบอร์ อีเมล LINE เวลาทำการ พื้นที่ให้บริการ ภาษา
-- **`OfferCatalog`** — บริการ 6 อย่างแยกเป็นรายการ พร้อมคำอธิบาย
-- **`ItemList` + `WebApplication`** — ผลงาน 5 ตัวพร้อม URL จริง
-- **`Review` + `AggregateRating`** — รีวิวลูกค้าจริง 5 รายการ (นามสมมุติ)
-- เซกชัน "ข้อมูลร้านโดยสรุป" เขียนเป็นข้อเท็จจริงสั้น ๆ ที่ดึงไปตอบได้ทันที
+แก้ที่ `lib/line-message.ts` — อยากดูผลก่อนส่งจริง ให้คัดลอก JSON ที่ `quoteMessages()` คืนมา
+ไปวางใน [Flex Message Simulator](https://developers.line.biz/flex-simulator/)
 
-### GEO — ให้ ChatGPT / Claude / Perplexity อ้างอิงได้
+ข้อจำกัดที่ต้องระวัง: `label` ของปุ่มยาวได้ไม่เกิน 20 ตัวอักษร (มี guard ไว้แล้ว),
+ข้อความหนึ่ง component ไม่เกิน 2000 ตัวอักษร และ uri ของปุ่มใช้ได้เฉพาะ http, https, line, tel
 
-- `llms.txt` สรุปข้อมูลร้าน บริการ เงื่อนไข และผลงาน เป็น Markdown ที่โมเดลอ่านง่าย
-- `robots.txt` อนุญาต GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended,
-  Applebot-Extended, meta-externalagent และอื่น ๆ อย่างชัดเจน
-- เนื้อหาบนหน้าเว็บระบุตัวเลขที่อ้างอิงได้ (1–2 สัปดาห์, 3–8 สัปดาห์, ประกัน 30 วัน, ตอบใน 1 ชั่วโมง)
-- meta `geo.region` / `geo.placename` สำหรับการค้นหาเชิงพื้นที่
+## SEO
 
-## สิ่งที่ควรทำต่อหลัง deploy
+- **แยก URL ต่อภาษา** — ไทยอยู่ที่ `/` อังกฤษอยู่ที่ `/en/` ทั้งสองหน้าเป็น HTML ที่ prerender
+  มาแล้วเต็มหน้า (ไม่ได้สลับภาษาด้วย JS) ทำให้ crawler เห็นเนื้อหาครบทั้งสองภาษา
+- **canonical ชี้ตัวเอง** และ **hreflang ไปกลับครบ** ทุกหน้าประกาศ `th`, `en` และ `x-default`
+  (ชี้ไปภาษาไทย) ทั้งใน `<head>` และใน sitemap
+- **ไม่มี redirect ตามภาษาเบราว์เซอร์** — Google จะได้เห็นหน้าเดียวกับที่ผู้ใช้เห็น
+  การเปลี่ยนภาษาใช้ลิงก์จริงใน header ที่ crawl ตามได้
+- **JSON-LD ต่อภาษา** — ธุรกิจและเว็บไซต์ใช้ `@id` เดียวกันทุกภาษาเพราะเป็น entity เดียวกัน
+  ส่วน `WebPage` / `FAQPage` / `ItemList` ผูกกับ URL ของหน้านั้นและระบุ `inLanguage` ตามภาษา
+- **ฟอนต์ self-host** ผ่าน `next/font` ตัดการต่อไป fonts.googleapis.com ช่วยเรื่อง LCP
+- `llms.txt` และ `robots.txt` เปิดให้ทั้ง search engine และ AI / answer engine เก็บข้อมูล (AEO + GEO)
 
-1. ส่ง `sitemap.xml` เข้า [Google Search Console](https://search.google.com/search-console) และ [Bing Webmaster Tools](https://www.bing.com/webmasters)
-2. ตรวจ structured data ด้วย [Rich Results Test](https://search.google.com/test/rich-results)
-3. สร้าง Google Business Profile เพื่อให้ขึ้นผลค้นหาแบบธุรกิจท้องถิ่น
-4. ตรวจความเร็วหน้าเว็บด้วย [PageSpeed Insights](https://pagespeed.web.dev/)
+เวลาเพิ่มภาษาใหม่: เพิ่มใน `lib/i18n.ts`, เพิ่มไฟล์ใน `i18n/` และสร้าง route group ใหม่
+ส่วน hreflang, sitemap และ JSON-LD จะอัปเดตตามเอง
 
-> **หมายเหตุเรื่องดาวรีวิว** — Google ไม่แสดงดาวใน search result สำหรับรีวิวที่ธุรกิจ
-> ใส่ไว้บนเว็บตัวเอง (self-serving review) แต่ข้อมูลรีวิวใน JSON-LD ยังมีประโยชน์กับ
-> AI / answer engine ถ้าอยากได้ดาวจริงใน Google ต้องสะสมรีวิวผ่าน Google Business Profile
+## Deploy
 
-## เนื้อหาในหน้า
+Deploy บน Vercel ได้ตรง ๆ (ต้องใส่ environment variable ของ LINE ก่อน ไม่งั้นฟอร์มจะถอยไปใช้อีเมล)
 
-| ส่วน | รายละเอียด |
-| --- | --- |
-| Hero | โน้ตบุ๊กสลับโชว์ผลงานจริง 5 ระบบ |
-| บริการ | เว็บแอป · ระบบ LINE · หลังบ้าน/แดชบอร์ด · เชื่อม API · ที่ปรึกษา · ดูแลหลังส่งมอบ |
-| ผลงาน | JongGo, คิดตัง, Judgement, พิมพ์ใจ, GenQR |
-| ขั้นตอน | 5 ขั้น ตั้งแต่คุยโจทย์ถึงดูแลต่อ |
-| รีวิว | รีวิวลูกค้าจริง เผยแพร่ด้วยนามสมมุติ |
-| FAQ | ราคา · ระยะเวลา · รอบแก้ · ซอร์สโค้ด · งานนักศึกษา |
-| ข้อมูลร้าน | ตารางสรุปข้อเท็จจริงสำหรับคนอ่านและ AI |
-
-## ติดต่อ
-
-- LINE: [@863icoey](https://line.me/R/ti/p/@863icoey)
-- โทร: 064-098-4337
-- อีเมล: itstudentservice123@gmail.com
+`/api/*` เป็น dynamic route ส่วนหน้าเว็บทั้งสองภาษาเป็น static ที่ prerender ตอน build

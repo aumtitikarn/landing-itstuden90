@@ -1,0 +1,547 @@
+{
+  "seo": {
+    "title": "Custom Software & Web App Development in Thailand | IT Student Service",
+    "description": "IT Student Service builds custom software, web applications, admin dashboards and LINE OA/LIFF systems, and advises on software solutions. 100+ projects delivered, free written quote, 30-day warranty. Call +66 64 098 4337.",
+    "keywords": "custom software development Thailand, web application development, web developer Thailand, LINE OA development, LIFF development, software consulting, admin dashboard, booking system, API integration, IT Student Service",
+    "author": "IT Student Service",
+    "ogImageAlt": "IT Student Service — custom software development and software consulting",
+    "geoPlacename": "Thailand"
+  },
+  "brand": {
+    "name": "IT Student",
+    "sub": "Service"
+  },
+  "nav": {
+    "services": "Services",
+    "works": "Work",
+    "process": "Process",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "about": "About",
+    "contact": "Contact us"
+  },
+  "langSwitch": {
+    "aria": "Choose language",
+    "toOther": "ไทย",
+    "toOtherAria": "Read this page in Thai",
+    "current": "English"
+  },
+  "hero": {
+    "badge": "Taking on new projects · fast replies",
+    "h1": "Custom <span class=\"hl\">software</span> built to fit<br>and <span class=\"hl hl-2\">advice</span> you can act on",
+    "lead": "<b>IT Student Service</b> develops web applications, admin systems and LINE-based products, and advises on software solutions end to end — from working out what you actually need, through design and development, to handover and continuous support.",
+    "ctaPrimary": "Get a free consultation",
+    "ctaSecondary": "See live projects",
+    "facts": [
+      {
+        "value": "100+",
+        "label": "Projects delivered"
+      },
+      {
+        "value": "10+",
+        "label": "Clients served"
+      },
+      {
+        "value": "< 1 hr",
+        "label": "Average reply time"
+      },
+      {
+        "value": "30 days",
+        "label": "Post-launch warranty"
+      }
+    ],
+    "laptopAlt": "Laptop showing projects built by IT Student Service",
+    "caption": "Systems real clients use every day — full details below."
+  },
+  "showcase": {
+    "kicker": "PROJECT {n} / {total}",
+    "itemAria": "View project {name}",
+    "items": [
+      {
+        "name": "JongGo",
+        "desc": "Booking and loyalty points over LINE, for barbershops, restaurants and massage studios"
+      },
+      {
+        "name": "KidTang",
+        "desc": "Thai Plus benefit calculator that finds the daily spend with the highest government top-up"
+      },
+      {
+        "name": "Judgement",
+        "desc": "Full 78-card tarot readings, cards picked by hand, interpreted with AI"
+      },
+      {
+        "name": "Pimjai",
+        "desc": "Leave a message pinned to any spot on the world map for someone else to find"
+      },
+      {
+        "name": "GenQR",
+        "desc": "Generate polished QR codes instantly — Wi-Fi, locations and socials, in your own colours"
+      }
+    ]
+  },
+  "ticker": [
+    "Web applications",
+    "Booking systems",
+    "LINE OA / LIFF",
+    "Management dashboards",
+    "Membership systems",
+    "API integration",
+    "Point-of-sale systems",
+    "Software consulting",
+    "Monthly maintenance"
+  ],
+  "services": {
+    "eyebrow": "What we do",
+    "h2": "The work you repeat <span class=\"nb\">every single day</span> <span class=\"nb\">can be made easier</span>",
+    "lead": "Some of it never quite counts as a problem — but with the right system behind it, you save hours and stop redoing the same work.",
+    "items": [
+      {
+        "title": "Bookings arrive by chat, and double-book",
+        "desc": "Enquiries come in across several channels, so you scroll back through messages one by one — and when two people book the same slot, they clash. We build booking that customers complete themselves, around the clock, with one shared queue your whole team sees.",
+        "chips": [
+          "Online booking",
+          "Web application",
+          "Queue calendar"
+        ]
+      },
+      {
+        "title": "Past customers drift away unnoticed",
+        "desc": "Most shops have no way to bring earlier customers back. We build membership and loyalty points on LINE — no extra app to install — so promotions land directly in the hands of people who already bought from you.",
+        "chips": [
+          "LINE OA",
+          "LIFF",
+          "Membership",
+          "Loyalty points"
+        ]
+      },
+      {
+        "title": "Month-end close eats a whole day",
+        "desc": "Figures sit scattered across notebooks, Excel and chat threads, and by the time they add up the decision is already late. We build back-office systems and dashboards that total revenue, costs and your busiest hours automatically.",
+        "chips": [
+          "Back office",
+          "Dashboard",
+          "Sales reports"
+        ]
+      },
+      {
+        "title": "The same typing, over and over",
+        "desc": "Copying details out of chat into Excel, then typing the receipt again — hours gone every day. We connect the tools you already use so the data flows through on its own, with nothing re-entered by hand.",
+        "chips": [
+          "API integration",
+          "Google Sheets",
+          "Payments"
+        ]
+      },
+      {
+        "title": "You want a system but not sure where to start",
+        "desc": "The worry is paying for more than you need, or building something nobody ends up using. We help separate what to build first from what can wait, with a budget and an expected outcome before you commit.",
+        "chips": [
+          "Software consulting",
+          "Scoping"
+        ]
+      },
+      {
+        "title": "The old system broke and nobody will fix it",
+        "desc": "Plenty of people have paid for a system and then lost contact with whoever built it. We hand over the full source code and every owner account, and stay available to support and extend it as the business grows.",
+        "chips": [
+          "Ongoing support",
+          "Team training",
+          "Further development"
+        ]
+      }
+    ]
+  },
+  "works": {
+    "eyebrow": "Live projects",
+    "h2": "Projects you can open and try right now",
+    "lead": "Every system below was designed and built entirely by our team, front end through back end.",
+    "items": [
+      {
+        "glyph": "J",
+        "name": "JongGo",
+        "tagline": "Book any time, on JongGo",
+        "desc": "Booking and loyalty built on LINE — four steps to book, with a choice of staff member or table, a queue ticket delivered as a Flex Message with a check-in QR, points earned and redeemed automatically, plus an in-store queue display and a dashboard covering revenue and the busiest hours of the week.",
+        "chips": [
+          "Barbershops",
+          "Restaurants",
+          "Massage studios",
+          "Repair shops"
+        ],
+        "schemaDesc": "Booking and loyalty system built on LINE. Four steps to book, queue tickets sent as Flex Messages with check-in QR codes, automatic points earning and redemption, an in-store queue display and a revenue dashboard."
+      },
+      {
+        "glyph": "฿",
+        "name": "KidTang",
+        "tagline": "Thai Plus benefit calculator",
+        "desc": "Works out your government benefit without any arithmetic, pinpointing the daily spend that earns the largest top-up. Sign in with LINE for advice based on your own situation, and track how much of your allowance you have used each month.",
+        "chips": [
+          "Benefit calculator",
+          "LINE Login",
+          "Budget tracking"
+        ],
+        "schemaDesc": "Calculator for the Thai Plus government scheme. Finds the daily spend that earns the largest top-up, signs in with LINE and tracks the allowance used each month."
+      },
+      {
+        "glyph": "◈",
+        "name": "Judgement",
+        "tagline": "AI-assisted tarot readings",
+        "desc": "A platform for full Rider–Waite readings across all 78 cards, with interpretations for both upright and reversed draws. Readers pick their own cards, choose between three modes (free question, card of the day, or a set of 71 questions across 11 categories), and receive an AI interpretation based on what they have shared.",
+        "chips": [
+          "AI interpretation",
+          "Full 78-card deck",
+          "11 question categories"
+        ],
+        "schemaDesc": "Tarot platform covering the full 78-card Rider-Waite deck. Readers pick their own cards across three modes, with 71 questions in 11 categories and AI-written interpretations."
+      },
+      {
+        "glyph": "P",
+        "name": "Pimjai",
+        "tagline": "Leave a message anywhere on the world map",
+        "desc": "A platform for messages tied to coordinates on the world map. Drop a pin, write a message at exactly that spot, and let whoever passes through read it there — an interactive map woven together with a messaging system.",
+        "chips": [
+          "Interactive map",
+          "Geolocation",
+          "Realtime"
+        ],
+        "schemaDesc": "Platform for leaving messages tied to coordinates on a world map. Drop a pin, write a message at that spot, and let others read it by location."
+      },
+      {
+        "glyph": "▦",
+        "name": "GenQR",
+        "tagline": "Beautiful QR codes, instantly",
+        "desc": "A QR code generator covering plain text, links, phone numbers, email, SMS, Wi-Fi credentials, Google Maps coordinates and social profiles (LINE, Facebook, Instagram, WhatsApp), with colours you choose yourself, in both Thai and English.",
+        "chips": [
+          "Wi-Fi QR",
+          "Social links",
+          "Custom colours",
+          "TH / EN"
+        ],
+        "schemaDesc": "QR code generator supporting text, links, phone numbers, email, SMS, Wi-Fi credentials, Google Maps coordinates and social profiles, with custom colours, in Thai and English."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "h2": "A process you can check at every step",
+    "lead": "The first consultation costs nothing, and we ask for no deposit until both sides have agreed the scope and the price.",
+    "steps": [
+      {
+        "title": "Tell us what you need",
+        "desc": "Describe the problems you run into day to day, however suits you. We write them up as a requirements document you can review.",
+        "meta": "Free · 30–60 minutes"
+      },
+      {
+        "title": "Quote & timeline",
+        "desc": "Scope, the features included, the delivery date and the payment stages — all in writing.",
+        "meta": "Within 1–3 days"
+      },
+      {
+        "title": "Design & build",
+        "desc": "Screen designs come to you for approval before development starts, with progress reported as we go.",
+        "meta": "Weekly updates"
+      },
+      {
+        "title": "Handover & training",
+        "desc": "We deploy it for real use, with a manual and training for your team until they are comfortable running it.",
+        "meta": "Files + owner accounts"
+      },
+      {
+        "title": "Ongoing support",
+        "desc": "Bug fixes are covered for 30 days, and we take on new features as the business grows.",
+        "meta": "30-day warranty"
+      }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Client feedback",
+    "h2": "What clients say",
+    "lead": "The things clients mention most: work finished fast, quality that matches what they asked for, prices they could talk through, and explanations detailed enough to actually follow.",
+    "starsAria": "Rated 5 out of 5",
+    "featured": {
+      "paragraphs": [
+        "I'm so impressed. Seriously talented, and so patient with me. I know nothing about code, so I had to keep asking questions, and every single time the answer came back gently and in detail. Explained so well that it was easy to understand.",
+        "So patient with me, even when I asked a lot or didn't get something — always calm, always a good answer. And the work was fast, and really cared about. Beautiful, detailed work, worth the price or more. This job was rushed too: ordered today, wanted today. Still delivered better than expected, and hours ahead of the deadline — due at 3am, finished by 11pm. Really accommodating. The loveliest.",
+        "I'd seen people on X saying the pricing was expensive or whatever. I don't think it's expensive at all — better value than plenty of others, and the work is excellent. The highest quote I got elsewhere was 5,000, and the care here isn't even comparable. Talking it through felt reassuring, like I knew it would be on time and exactly as requested.",
+        "Anyway, cheering you on. Keep going, you're brilliant. And if anyone else is reading this review, you can be confident: no scams, nobody disappearing, fast work, excellent work, better than you expect. The work you did for me scored 94% from my lecturer. Thank you so much 🙏 I'll definitely be back."
+      ],
+      "initial": "P",
+      "author": "Ploy",
+      "date": "21 Aug 2026",
+      "pulls": [
+        {
+          "label": "Lecturer's score",
+          "value": "94%",
+          "note": "On the submitted project"
+        },
+        {
+          "label": "Ahead of deadline",
+          "value": "4 hrs",
+          "note": "Due 3am · done by 11pm"
+        }
+      ]
+    },
+    "items": [
+      {
+        "quote": "Really fast work. If the price was too much you could talk it over, and so kind about it — thank you for taking pity on a broke student like me. The work came out lovely too, I love it 💗",
+        "initial": "A",
+        "author": "Ae",
+        "date": "14 Jun 2026"
+      },
+      {
+        "quote": "Such a good service — a 10 out of 10 deserves a 100. Incredibly fast, finished ahead of the deadline, price you can discuss, and great value. I'll absolutely be back, 100%.",
+        "initial": "M",
+        "author": "Mint",
+        "date": "29 Jul 2026"
+      },
+      {
+        "quote": "Super fast, right on time, never once impatient or short with me. Good price. Highly recommend.",
+        "initial": "B",
+        "author": "Beam",
+        "date": "3 Jul 2026"
+      },
+      {
+        "quote": "Great work — fast and good quality, and so easy to talk things through. I'll be back the next chance I get.",
+        "initial": "N",
+        "author": "Nan",
+        "date": "16 Aug 2026"
+      }
+    ],
+    "note": "These reviews come from real clients, published under pseudonyms to protect their privacy, and translated from the original Thai."
+  },
+  "faq": {
+    "eyebrow": "Common questions",
+    "h2": "What people ask before we start",
+    "items": [
+      {
+        "q": "How much does it cost to start?",
+        "a": "Price depends on the scope and how many features are involved — a single-page business site starts far lower than a system with a back office and membership. Send over the details first and we will assess it and give you a written quote at no cost, with no deposit asked for at this stage.",
+        "schemaA": "Price depends on the scope and how many features are involved. A single-page business site starts far lower than a system with a back office and membership. Send over the details and IT Student Service will assess it and provide a written quote at no cost, with no deposit required at this stage."
+      },
+      {
+        "q": "How long does a project take?",
+        "a": "A small website takes roughly 1–2 weeks; a system with a back office, membership, or a LINE integration takes roughly 3–8 weeks. The delivery date is stated in the quote from the outset, and progress is reported every week.",
+        "schemaA": "A small website takes roughly 1-2 weeks. A system with a back office, membership or LINE integration takes roughly 3-8 weeks. The delivery date is stated in the quote from the outset and progress is reported weekly."
+      },
+      {
+        "q": "How many rounds of revisions do I get?",
+        "a": "During development you can revise as agreed in the scope, and after handover bug fixes are covered for 30 days at no extra charge. For new features outside the original scope, we always tell you the price before starting.",
+        "schemaA": "During development revisions are included as agreed in the scope, and after handover bug fixes are covered for 30 days at no extra charge. For new features outside the original scope, the price is always given before work starts."
+      },
+      {
+        "q": "Who owns the source code?",
+        "a": "The source code belongs to you. Once the agreed payment stages are complete, we hand over the source code, ownership of the hosting and database accounts, and the user manual — so you are never locked to one developer if you decide to move to another team later.",
+        "schemaA": "The source code belongs to the client. Once the agreed payment stages are complete, the client receives the source code, ownership of the hosting and database accounts, and the user manual, so they are never locked to one developer if they move to another team later."
+      },
+      {
+        "q": "Do you take on student projects or theses?",
+        "a": "We provide technical consulting, system architecture and help debugging your code, so that you build and present the work yourself. Send over your topic and deadline and we will take a look.",
+        "schemaA": "IT Student Service provides technical consulting, system architecture and help debugging code so that students build and present the work themselves. Send the topic and deadline for an assessment."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "The essentials",
+    "h2": "Who IT Student Service is, and what we do",
+    "lead": "<b>IT Student Service (นักเรียนไอที)</b> is a software development team based in Thailand, building web applications, admin systems and LINE OA products, and advising on software solutions. We work entirely online, which means we take on projects anywhere in the country.",
+    "specs": [
+      {
+        "dt": "Core services",
+        "dd": "Web applications · LINE-based systems (OA / LIFF / Flex Message) · back office and dashboards · API integration with existing systems · software consulting · post-launch support"
+      },
+      {
+        "dt": "Track record",
+        "dd": "More than <b>100 projects</b> delivered for over <b>10 clients</b>, with 5 live systems on this page you can open and try."
+      },
+      {
+        "dt": "Service area",
+        "dd": "All of Thailand — 100% online from first call to handover, no province off limits."
+      },
+      {
+        "dt": "Timelines",
+        "dd": "Small websites <b>1–2 weeks</b> · systems with a back office, membership or LINE integration <b>3–8 weeks</b>"
+      },
+      {
+        "dt": "Pricing and payment",
+        "dd": "Quotes are scoped and priced at no cost, no deposit is taken before the price is agreed, and anything outside the agreed scope is priced before work begins."
+      },
+      {
+        "dt": "Warranty",
+        "dd": "<b>30 days</b> of bug fixes after handover, along with training and a user manual."
+      },
+      {
+        "dt": "Ownership",
+        "dd": "Source code and ownership of the hosting and database accounts are handed over in full once payment stages are complete. No lock-in to the developer."
+      },
+      {
+        "dt": "Technology",
+        "dd": "Next.js · TypeScript · Tailwind CSS · LINE Messaging API · LIFF · REST APIs and webhooks"
+      },
+      {
+        "dt": "Languages",
+        "dd": "Thai and English"
+      },
+      {
+        "dt": "Opening hours",
+        "dd": "Monday–Saturday, 09:00–20:00 (UTC+7) · average reply within 1 hour"
+      },
+      {
+        "dt": "Get in touch",
+        "dd": "LINE <b>@863icoey</b> · phone <b>+66 64 098 4337</b> · email <b>itstudentservice123@gmail.com</b>"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact us",
+    "h2": "Talk it through first — at no cost",
+    "lead": "Send the details through any channel you like. LINE gets you the fastest reply.",
+    "lineLabel": "LINE Official",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hours": [
+      "Average reply within 1 hour",
+      "Monday–Saturday, 09:00–20:00 (UTC+7)",
+      "First consultation is free"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 IT Student Service · นักเรียนไอที",
+    "hitsBefore": "Viewed",
+    "hitsAfter": "times",
+    "hitsAlt": "Number of times this page has been viewed"
+  },
+  "dock": {
+    "aria": "Quick contact",
+    "openAria": "Open quick contact",
+    "closeAria": "Close quick contact",
+    "line": "Chat on LINE",
+    "call": "Call now",
+    "email": "Send email",
+    "quote": "Request a quote"
+  },
+  "quote": {
+    "title": "Request a quote",
+    "lead": "A few details is all we need. We assess it and reply within an hour during opening hours.",
+    "closeAria": "Close the quote form",
+    "optional": "optional",
+    "serviceLabel": "What do you need?",
+    "servicePlaceholder": "Choose a service",
+    "serviceOptions": [
+      "Web application / website",
+      "LINE system (OA / LIFF / Flex Message)",
+      "Back office and dashboard",
+      "API integration with an existing system",
+      "Software consulting",
+      "Support for an existing system",
+      "Something else"
+    ],
+    "nameLabel": "Your name",
+    "namePlaceholder": "e.g. Somchai",
+    "companyLabel": "Company / shop name",
+    "companyPlaceholder": "e.g. Somchai Barbershop",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "e.g. 081 234 5678",
+    "emailLabel": "Email",
+    "emailPlaceholder": "e.g. you@company.com",
+    "detailsLabel": "Details",
+    "detailsPlaceholder": "What should the system do, roughly how many users, any deadline or budget in mind?",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "lineAlt": "Or send it over LINE",
+    "privacy": "We use these details only to contact you back with a quote.",
+    "errRequired": "Please fill this in",
+    "errEmail": "That email address doesn't look right",
+    "errPhone": "Please enter a valid phone number",
+    "errSummary": "Some details are still missing — see the fields marked below.",
+    "successTitle": "Request ready to send",
+    "successMailBody": "Your email app is opening with everything filled in. Send it and we'll get back to you within the hour.",
+    "successPostBody": "Thanks — we've got your request and will reply within the hour during opening hours.",
+    "successLineBody": "The details are copied to your clipboard and LINE is opening — just paste and send.",
+    "successClose": "Close",
+    "mailSubject": "Quote request — {service}",
+    "fieldService": "Service",
+    "fieldName": "Name",
+    "fieldCompany": "Company / shop",
+    "fieldPhone": "Phone",
+    "fieldEmail": "Email",
+    "fieldDetails": "Details",
+    "fieldPage": "Sent from"
+  },
+  "schema": {
+    "businessName": "IT Student Service",
+    "alternateName": [
+      "IT Student",
+      "นักเรียนไอที",
+      "นักเรียนไอที รับทำโปรแกรม"
+    ],
+    "description": "Software development team based in Thailand, building web applications, admin systems and LINE OA products and advising on software solutions. Over 100 projects delivered for more than 10 clients, working online nationwide.",
+    "slogan": "Custom software of every kind, and software consulting",
+    "knowsAbout": [
+      "custom software development",
+      "web application development",
+      "Software Solution",
+      "LINE OA",
+      "LIFF",
+      "Next.js",
+      "TypeScript",
+      "booking system",
+      "dashboard",
+      "REST API"
+    ],
+    "countryName": "Thailand",
+    "offerCatalogName": "Services from IT Student Service",
+    "services": [
+      {
+        "name": "Web application development",
+        "description": "Websites and web apps, booking systems, sales systems, membership systems and company sites, working on both mobile and desktop."
+      },
+      {
+        "name": "LINE-based systems",
+        "description": "Development of LINE OA, LIFF, Flex Messages, digital queue tickets and automated customer notifications."
+      },
+      {
+        "name": "Back office and dashboards",
+        "description": "Data management systems, user permissions, sales reports and executive dashboards."
+      },
+      {
+        "name": "API and legacy system integration",
+        "description": "Connecting payment systems, Google Sheets, accounting software or a client's existing systems via REST APIs and webhooks."
+      },
+      {
+        "name": "Software consulting",
+        "description": "Framing the problem, scoping the work, estimating budget and prioritising features."
+      },
+      {
+        "name": "Post-launch support",
+        "description": "Training, user manuals, server maintenance, bug fixes and new feature development."
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Ploy",
+        "datePublished": "2026-08-21",
+        "body": "I'm so impressed. Seriously talented, and so patient with me. I know nothing about code, so I had to keep asking questions, and every single time the answer came back gently and in detail, explained well enough to be easy to understand. The work was fast and really cared about, beautiful and detailed, worth the price or more. This job was rushed too, ordered today and wanted today, and it still came back better than expected and hours ahead of the deadline: due at 3am, finished by 11pm. The work scored 94% from my lecturer."
+      },
+      {
+        "author": "Ae",
+        "datePublished": "2026-06-14",
+        "body": "Really fast work. If the price was too much you could talk it over, and so kind about it. The work came out lovely too, I love it."
+      },
+      {
+        "author": "Mint",
+        "datePublished": "2026-07-29",
+        "body": "Such a good service, a 10 out of 10 deserves a 100. Incredibly fast, finished ahead of the deadline, price you can discuss and great value. I'll absolutely be back, 100%."
+      },
+      {
+        "author": "Beam",
+        "datePublished": "2026-07-03",
+        "body": "Super fast, right on time, never once impatient or short with me. Good price. Highly recommend."
+      },
+      {
+        "author": "Nan",
+        "datePublished": "2026-08-16",
+        "body": "Great work, fast and good quality, and so easy to talk things through. I'll be back the next chance I get."
+      }
+    ],
+    "worksListName": "Projects built by IT Student Service"
+  }
+}
