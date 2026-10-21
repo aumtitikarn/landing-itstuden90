@@ -35,7 +35,7 @@ export function Hero({ t }: { t: Dict }) {
               items={t.showcase.items}
               kicker={t.showcase.kicker}
               itemAria={t.showcase.itemAria}
-              laptopAlt={t.hero.laptopAlt}
+              machineAlt={t.hero.machineAlt}
             />
             <p className="caption">{t.hero.caption}</p>
           </div>
